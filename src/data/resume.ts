@@ -184,7 +184,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     title: { en: 'AI & Tooling', pt: 'IA & Ferramentas' },
-    items: ['Claude (Azure)', 'GitHub Copilot', 'Visual Studio', 'VS Code', 'Git'],
+    items: ['GitHub Copilot', 'Visual Studio', 'VS Code', 'Git'],
   },
   {
     title: { en: 'Leadership', pt: 'Liderança' },
