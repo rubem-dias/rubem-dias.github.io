@@ -140,6 +140,16 @@ export function skillText(item: SkillItem, tr: (value: Bilingual) => string): st
   return typeof item === 'string' ? item : tr(item)
 }
 
+/* Years of experience — auto-increments each year on the start-date anniversary. */
+const CAREER_START = new Date(2020, 9, 18) // 18 Oct 2020
+
+export function yearsOfExperience(ref: Date = new Date()): number {
+  let years = ref.getFullYear() - CAREER_START.getFullYear()
+  const anniversary = new Date(ref.getFullYear(), CAREER_START.getMonth(), CAREER_START.getDate())
+  if (ref < anniversary) years -= 1
+  return years
+}
+
 export function formatCount(value: number, compact = false): string {
   if (compact) {
     return new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 })

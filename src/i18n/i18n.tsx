@@ -27,7 +27,7 @@ const en = {
   hero_head_accent: 'fast, scalable',
   hero_head_2: ' systems, leading the teams that ship them.',
   hero_sub:
-    'Full stack engineer with 5+ years in C#/.NET and React. I turn legacy platforms into fast, modern products.',
+    'Full stack engineer with {years}+ years in C#/.NET and React. I turn legacy platforms into fast, modern products.',
   cta_contact: 'Get in touch',
   cta_work: 'See the work',
   hero_scroll: 'Scroll to explore',
@@ -116,7 +116,7 @@ const pt: Record<DictKey, string> = {
   hero_head_accent: 'rápidos e escaláveis',
   hero_head_2: ', liderando os times que os entregam.',
   hero_sub:
-    'Engenheiro full stack com mais de 5 anos em C#/.NET e React. Transformo plataformas legadas em produtos rápidos e modernos.',
+    'Engenheiro full stack com mais de {years} anos em C#/.NET e React. Transformo plataformas legadas em produtos rápidos e modernos.',
   cta_contact: 'Vamos conversar',
   cta_work: 'Ver o trabalho',
   hero_scroll: 'Role para explorar',

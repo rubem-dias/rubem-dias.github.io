@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowDown, ArrowUpRight, Mail } from 'lucide-react'
 import { useI18n } from '../i18n/i18n'
 import { SOCIAL } from '../data/resume'
+import { yearsOfExperience } from '../lib/hooks'
 import { GithubIcon, LinkedinIcon } from './ui/BrandIcons'
 
 const EASE = [0.22, 0.61, 0.36, 1] as const
@@ -45,6 +46,7 @@ function ProfileCard() {
   const { tr } = useI18n()
   const focus = tr({ en: 'performance & scale', pt: 'performance e escala' })
   const based = tr({ en: 'Belo Horizonte, BR', pt: 'Belo Horizonte, BR' })
+  const years = yearsOfExperience()
 
   return (
     <div className="codecard panel">
@@ -93,7 +95,7 @@ function ProfileCard() {
           <span className="cl">
             {'  '}
             <span className="tok-prop">years</span>
-            <span className="tok-punc">:</span> <span className="tok-num">5</span>
+            <span className="tok-punc">:</span> <span className="tok-num">{years}</span>
             <span className="tok-punc">,</span>
           </span>
           <span className="cl">
@@ -108,6 +110,7 @@ function ProfileCard() {
 export function Hero() {
   const { t } = useI18n()
   const reduce = useReducedMotion()
+  const years = yearsOfExperience()
 
   const container = {
     hidden: {},
@@ -148,7 +151,7 @@ export function Hero() {
           </motion.p>
 
           <motion.p className="hero__sub" variants={item}>
-            {t('hero_sub')}
+            {t('hero_sub').replace('{years}', String(years))}
           </motion.p>
 
           <motion.div className="hero__cta" variants={item}>
