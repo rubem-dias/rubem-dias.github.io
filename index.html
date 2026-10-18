@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#08090B" />
+
+    <title>Rubem Dias · Senior Full Stack Engineer</title>
+    <meta
+      name="description"
+      content="Rubem Dias, senior full stack engineer specialized in C#/.NET, React, performance engineering, data platforms and AI-assisted automation. 5+ years shipping scalable production systems."
+    />
+    <meta name="author" content="Rubem Dias" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rubem Dias · Senior Full Stack Engineer" />
+    <meta
+      property="og:description"
+      content="Senior full stack engineer. C#/.NET, React, performance, data platforms and AI-assisted automation."
+    />
+    <meta property="og:url" content="https://rubem-dias.github.io" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rubem Dias · Senior Full Stack Engineer" />
+    <meta
+      name="twitter:description"
+      content="Senior full stack engineer. C#/.NET, React, performance, data platforms and AI-assisted automation."
+    />
+
+    <!-- Apply persisted theme/language before paint to avoid flashes -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme') || 'dark';
+          document.documentElement.setAttribute('data-theme', t);
+          var l = localStorage.getItem('lang') || 'en';
+          document.documentElement.setAttribute('lang', l);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+    <style>
+      html { background: #08090b; }
+      html[data-theme='light'] { background: #fbfbfa; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

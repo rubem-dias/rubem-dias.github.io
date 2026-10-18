@@ -1,0 +1,100 @@
+/* ============================================================
+   Projects
+   ============================================================ */
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: clamp(1rem, 0.7rem + 1vw, 1.4rem);
+}
+.project-cell {
+  display: flex;
+}
+.project-cell > .project {
+  width: 100%;
+}
+.project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: clamp(1.35rem, 1rem + 1.5vw, 1.85rem);
+  transition:
+    transform var(--t-med) var(--ease-out),
+    border-color var(--t-med) var(--ease-out),
+    background var(--t-med) var(--ease-out);
+}
+.project.is-link:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  background: var(--surface-2);
+}
+.project__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.project__year {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+.project__icon {
+  display: inline-flex;
+  color: var(--text-dim);
+  transition: color var(--t-fast);
+}
+.project.is-link:hover .project__icon {
+  color: var(--accent-text);
+}
+.project__private {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--fs-micro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.project__name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.project__desc {
+  flex: 1;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+.project__stack {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.project__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.1rem;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--accent-text);
+}
+.project__cta svg {
+  transition: transform var(--t-fast) var(--ease-out);
+}
+.project.is-link:hover .project__cta svg {
+  transform: translate(2px, -2px);
+}
+.project__fulllink {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 1;
+}
+.projects__foot {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.25rem;
+}

@@ -1,0 +1,135 @@
+/* ============================================================
+   Design tokens — dark is the default theme.
+   Light theme overrides live under [data-theme='light'].
+   ============================================================ */
+
+:root,
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --bg: #08090b;
+  --bg-grid: rgba(255, 255, 255, 0.022);
+  --surface-1: #0d0e11;
+  --surface-2: #121317;
+  --surface-3: #171920;
+  --surface-hover: #1b1e26;
+
+  /* Lines */
+  --border: rgba(255, 255, 255, 0.075);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --border-accent: rgba(200, 247, 81, 0.35);
+
+  /* Text */
+  --text: #f3f4f6;
+  --text-muted: #a4a9b4;
+  --text-dim: #6b707b;
+  --text-faint: #474b54;
+
+  /* Brand accent — chartreuse. Used sparingly. */
+  --accent: #c8f751;
+  --accent-hover: #d4fb6c;
+  --accent-ink: #0a0f02; /* text/ink placed on top of accent fills */
+  --accent-text: #c8f751; /* accent used as foreground text/icons */
+  --accent-soft: rgba(200, 247, 81, 0.1);
+  --accent-softer: rgba(200, 247, 81, 0.05);
+  --ring: rgba(200, 247, 81, 0.55);
+
+  /* Data-viz series */
+  --viz-1: #c8f751;
+  --viz-2: #54e6c8;
+  --viz-3: #7aa2ff;
+  --viz-4: #c4a0ff;
+  --viz-5: #ffc178;
+  --viz-6: #ff8da1;
+  --viz-track: rgba(255, 255, 255, 0.06);
+  --viz-grid: rgba(255, 255, 255, 0.06);
+
+  /* Elevation — kept subtle, no colored glow */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 10px 34px -12px rgba(0, 0, 0, 0.6);
+  --shadow-3: 0 28px 70px -24px rgba(0, 0, 0, 0.72);
+  --card-inset: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #fbfbfa;
+  --bg-grid: rgba(10, 12, 20, 0.03);
+  --surface-1: #ffffff;
+  --surface-2: #ffffff;
+  --surface-3: #f5f5f3;
+  --surface-hover: #f0f0ec;
+
+  --border: rgba(15, 18, 25, 0.1);
+  --border-strong: rgba(15, 18, 25, 0.18);
+  --border-accent: rgba(92, 122, 0, 0.4);
+
+  --text: #15171c;
+  --text-muted: #51565f;
+  --text-dim: #80858f;
+  --text-faint: #abafb7;
+
+  --accent: #c3f03f;
+  --accent-hover: #b6e82d;
+  --accent-ink: #11160a;
+  --accent-text: #536d00; /* darker so it reads on light surfaces */
+  --accent-soft: rgba(92, 122, 0, 0.1);
+  --accent-softer: rgba(92, 122, 0, 0.05);
+  --ring: rgba(92, 122, 0, 0.5);
+
+  --viz-1: #6f9400;
+  --viz-2: #0fae92;
+  --viz-3: #4f74e0;
+  --viz-4: #8a5cf0;
+  --viz-5: #d98318;
+  --viz-6: #e05574;
+  --viz-track: rgba(15, 18, 25, 0.07);
+  --viz-grid: rgba(15, 18, 25, 0.08);
+
+  --shadow-1: 0 1px 2px rgba(20, 23, 33, 0.06);
+  --shadow-2: 0 12px 34px -14px rgba(20, 23, 33, 0.16);
+  --shadow-3: 0 30px 70px -28px rgba(20, 23, 33, 0.24);
+  --card-inset: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+:root {
+  /* Typography */
+  --font-display: 'Space Grotesk Variable', 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Fluid type scale */
+  --fs-mega: clamp(2.9rem, 1.6rem + 6.2vw, 6.6rem);
+  --fs-h1: clamp(2.3rem, 1.4rem + 4vw, 4.2rem);
+  --fs-h2: clamp(1.9rem, 1.3rem + 2.6vw, 3rem);
+  --fs-h3: clamp(1.35rem, 1.1rem + 1vw, 1.75rem);
+  --fs-lead: clamp(1.08rem, 1rem + 0.5vw, 1.35rem);
+  --fs-body: 1rem;
+  --fs-sm: 0.875rem;
+  --fs-xs: 0.78rem;
+  --fs-micro: 0.7rem;
+
+  /* Spacing rhythm */
+  --space-section: clamp(2.75rem, 2rem + 4vw, 5rem);
+  --container: 1200px;
+  --container-wide: 1320px;
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 2.5rem);
+
+  /* Radii */
+  --r-xs: 7px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 26px;
+  --r-2xl: 34px;
+  --r-full: 999px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 0.16s;
+  --t-med: 0.32s;
+  --t-slow: 0.6s;
+}

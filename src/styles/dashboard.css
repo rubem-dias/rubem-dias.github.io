@@ -1,0 +1,339 @@
+/* ============================================================
+   Metrics band + analytics dashboard
+   ============================================================ */
+
+/* ---------- Metrics band ---------- */
+
+.metrics {
+  padding-block: clamp(2.5rem, 1.6rem + 3vw, 4rem);
+}
+.metrics__eyebrow {
+  margin-bottom: 1.6rem;
+}
+.metrics__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: clamp(1.15rem, 0.8rem + 1vw, 1.7rem);
+  background: var(--surface-1);
+  transition: background var(--t-fast) var(--ease-out);
+}
+.metric:hover {
+  background: var(--surface-2);
+}
+.metric__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.metric__value {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 2.9rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+.metric__spark {
+  flex-shrink: 0;
+  margin-top: 0.3rem;
+  color: var(--accent-text);
+  opacity: 0.9;
+}
+.metric__label {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text);
+}
+.metric__detail {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+
+/* ---------- Dashboard grid ---------- */
+
+.dash__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1rem, 0.6rem + 1.2vw, 1.5rem);
+}
+.dcell {
+  display: flex;
+  min-width: 0;
+}
+.dcell > .panel {
+  width: 100%;
+}
+.dcell--perf {
+  grid-column: span 12;
+}
+.dcell--radar {
+  grid-column: span 6;
+}
+.dcell--focus {
+  grid-column: span 6;
+}
+
+.dashpanel {
+  padding: clamp(1.25rem, 1rem + 1vw, 1.7rem);
+}
+.panel__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 1.3rem;
+}
+.panel__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  color: var(--accent-text);
+  background: var(--accent-softer);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--r-sm);
+}
+.panel__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+.panel__title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.panel__sub {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+.chartframe {
+  width: 100%;
+}
+.dash-fallback {
+  min-height: 720px;
+}
+.dash__footnote {
+  margin-top: 1.5rem;
+  font-size: var(--fs-xs);
+  color: var(--text-faint);
+}
+
+/* ---------- Performance panel ---------- */
+
+.perf {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: clamp(1.5rem, 1rem + 3vw, 3rem);
+  padding-top: 0.25rem;
+}
+.perf__hero {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding-right: clamp(1rem, 0.5rem + 2vw, 2.2rem);
+  border-right: 1px solid var(--border);
+}
+.perf__factor {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(3rem, 2rem + 5vw, 4.8rem);
+  line-height: 0.88;
+  letter-spacing: -0.05em;
+  color: var(--accent-text);
+}
+.perf__faster {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+}
+.perf__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+.perf__row {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr 3.4rem;
+  align-items: center;
+  gap: 0.9rem;
+}
+.perf__k {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+.perf__track {
+  height: 12px;
+  background: var(--viz-track);
+  border-radius: var(--r-full);
+  overflow: hidden;
+}
+.perf__bar {
+  height: 100%;
+  border-radius: var(--r-full);
+}
+.perf__bar--before {
+  background: var(--border-strong);
+}
+.perf__bar--after {
+  background: linear-gradient(90deg, var(--accent), var(--viz-2));
+}
+.perf__v {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  text-align: right;
+}
+.perf__v--accent {
+  color: var(--accent-text);
+  font-weight: 600;
+}
+.perf__methods {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.perf__methods-label {
+  font-size: var(--fs-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.perf__tags {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- Focus donut ---------- */
+
+.focus {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+.focus__chart {
+  position: relative;
+}
+.focus__center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.05rem;
+  pointer-events: none;
+}
+.focus__center-value {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.55rem;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+.focus__center-label {
+  max-width: 9ch;
+  font-size: var(--fs-micro);
+  line-height: 1.2;
+  text-align: center;
+  color: var(--text-dim);
+}
+.focus__legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.focus__item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--fs-sm);
+}
+.focus__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+}
+.focus__name {
+  color: var(--text-muted);
+}
+.focus__val {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ---------- Recharts resets ---------- */
+
+.recharts-wrapper:focus,
+.recharts-surface:focus,
+.recharts-wrapper:focus-visible {
+  outline: none;
+}
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+.recharts-polar-angle-axis-tick-value {
+  font-family: var(--font-mono);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .dash__grid {
+    grid-template-columns: 1fr;
+  }
+  .dcell--perf,
+  .dcell--radar,
+  .dcell--focus {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .metrics__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .perf {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .perf__hero {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.7rem;
+    padding: 0 0 1rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .focus {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .focus__chart {
+    width: 200px;
+  }
+  .focus__legend {
+    width: 100%;
+    max-width: 320px;
+  }
+}
